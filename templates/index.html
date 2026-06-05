@@ -8,6 +8,20 @@
 <body>
     <div class="Calculator">
         <h2>Python Flask Calculator</h2>
+
+        <input type="number"  id="num1" placeholder="First number">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number"  id="num2" placeholder="Second number">
+
+        <button onclick="calculate()">Calculate </button>
+        <h3 id="result">Result :</h3>
     </div>
+
+    <script src="{{url_for('static',filename='script.js')}}"></script>
 </body>
 </html>
