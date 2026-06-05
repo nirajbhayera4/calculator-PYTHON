@@ -1,16 +1,17 @@
-from flask import Flask, request, jsonify,render_template
-app=Flask(__name__)
+from flask import Flask, request, jsonify, render_template
+
+app = Flask(__name__)
 
 @app.route("/")
 def home():
     return render_template("index.html")
 
-@app.route("calculate",methods=["POST"])
+@app.route("/calculate", methods=["POST"])
 def calculate():
-    data:request.json
-    num1=float(data["num1"])
-    num2=float(data["num2"])
-    operator=data["operator"]
+    data = request.get_json()
+    num1 = float(data["num1"])
+    num2 = float(data["num2"])
+    operator = data["operator"]
 
     try :
         if operator=="+":

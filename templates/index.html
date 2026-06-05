@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="Calculator">
-        <h2>Python Flask Calculator</h2>
 
-        <input type="number"  id="num1" placeholder="First number">
-        <select id="operator">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-        </select>
-        <input type="number"  id="num2" placeholder="Second number">
+<div class="calculator">
 
-        <button onclick="calculate()">Calculate </button>
-        <h3 id="result">Result :</h3>
-    </div>
+    <h2>Python Flask Calculator</h2>
 
-    <script src="{{url_for('static',filename='script.js')}}"></script>
+    <input type="number" id="num1" placeholder="First Number">
+
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+
+    <input type="number" id="num2" placeholder="Second Number">
+
+    <button type="button" onclick="calculate()">Calculate</button>
+
+    <h3 id="result">Result:</h3>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 </html>
